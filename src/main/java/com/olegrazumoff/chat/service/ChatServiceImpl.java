@@ -131,7 +131,7 @@ public class ChatServiceImpl implements ChatService{
     }
 
     private void sendMessage(final AtmosphereResource resource, String message) {
-        Gson gson = new GsonBuilder().setDateFormat("HH:mm:ss").create();
+        Gson gson = new GsonBuilder().setDateFormat(DATE_FORMAT).create();
         User user = userDao.get(resource.uuid());
         if(user != null) {
             Message newMessage = addMessage(user.getName(), message);
